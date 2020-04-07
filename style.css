@@ -27,6 +27,31 @@ header {
 
 #header {
 	padding: 1.5%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+	#header {
+		display: contents;
+		padding-left: 10px;
+		margin-left: 10px;
+	}
+	h2 {
+		padding-left: 10px;
+		padding-bottom: 2px;
+		text-align: center;
+		font-size: 5vw;
+	}
+	h4 {
+		padding-left: 10px;
+		padding-bottom: 4px;
+		text-align: center;
+	}
+	#hero {
+		font-size: 16px !important;
+	}
 }
 
 #hero {
@@ -36,9 +61,10 @@ header {
 	margin-right: 15%;
 	padding: 5%;
 	background: rgba(50, 51, 50, 0.8);
-	border-radius: 45px;
+	border-radius: 30px;
 	border: solid white 2px;
 	text-align: center;
+	font-size: 36px;
 }
 
 img {
@@ -55,6 +81,6 @@ img {
 	margin-right: 5%;
 	padding: 5rem;
 	background: rgba(50, 51, 50, 0.8);
-	border-radius: 45px;
+	border-radius: 30px;
 	border: solid black 2px;
 }

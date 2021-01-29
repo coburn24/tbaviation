@@ -11,8 +11,8 @@ export default function Home() {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
-          Hello, I'm <b>Matt</b> I'm a CFII and A&P located in Orange County
-          Caifornia 🍊. You can contact me on{" "}
+          Hello, I'm <b>Matt</b> I'm a CFII, A&P, and Software Developer located
+          in Orange County Caifornia 🍊. You can contact me on{" "}
           <a target="_blank" href="http://twitter.com/co_burn24">
             Twitter
           </a>

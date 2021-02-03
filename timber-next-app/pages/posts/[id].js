@@ -2,7 +2,7 @@ import utilStyles from "../../styles/utils.module.css";
 import Layout from "../../components/layout";
 import Head from "next/head";
 import Date from "../../components/date";
-import { getAllPostIds, getPostData } from "../../lib/posts";
+import { getAllPostIds, getPostDataWithId } from "../../lib/posts";
 
 export default function Post({ postData }) {
   return (
@@ -30,7 +30,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id);
+  const postData = await getPostDataWithId(params.id);
   return {
     props: {
       postData,

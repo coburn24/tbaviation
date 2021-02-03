@@ -4,17 +4,23 @@ import Date from "../components/date";
 import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
+import { data } from "remark";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  const JSONdata = await res.json();
+  console.log(JSONdata);
   return {
     props: {
       allPostsData,
+      JSONdata,
     },
   };
 }
 
-export default function Home({ allPostsData }) {
+export default function Home({ allPostsData, JSONdata }) {
+  console.log(JSONdata);
   return (
     <Layout home>
       <Head>
@@ -34,6 +40,16 @@ export default function Home({ allPostsData }) {
             <a>post!</a>
           </Link>
         </p>
+      </section>
+      <section>
+        <h2 className={utilStyles.headingLg}>Users</h2>
+        <ul>
+          {JSONdata.map((user) => (
+            <li className={utilStyles.listItem} key={user.id}>
+              {user.name}
+            </li>
+          ))}
+        </ul>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
